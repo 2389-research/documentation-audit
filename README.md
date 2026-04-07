@@ -1,5 +1,12 @@
 
 
+## Installation
+
+```bash
+/plugin marketplace add 2389-research/claude-plugins
+/plugin install documentation-audit@2389-research
+```
+
 ---
 
 If Documentation Audit caught a lie in your docs, a ⭐ helps us know it's landing.
