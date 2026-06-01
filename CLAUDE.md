@@ -2,7 +2,7 @@
 
 ## Overview
 
-This plugin provides systematic verification of documentation claims against codebase reality. It runs in an isolated context using the Plan agent to avoid polluting the main conversation with extraction artifacts.
+This plugin provides systematic verification of documentation claims against codebase reality. It runs in an isolated forked context (`context: fork`) to avoid polluting the main conversation with extraction artifacts, using an agent that can both spawn parallel extraction sub-agents and write the audit report.
 
 ## Skills Included
 
@@ -64,7 +64,7 @@ Generates `docs/audits/AUDIT_REPORT_YYYY-MM-DD.md` with:
 
 ## Parallel Agent Usage
 
-The skill uses parallel Task agents (one per document) for extraction to maximize efficiency. The Plan agent context keeps extraction artifacts separate from your main conversation.
+The skill uses parallel Task agents (one per document) for extraction to maximize efficiency. The forked `context: fork` keeps extraction artifacts separate from your main conversation.
 
 ## Patterns and Anti-Patterns
 

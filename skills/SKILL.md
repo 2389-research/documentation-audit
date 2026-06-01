@@ -2,7 +2,7 @@
 name: documentation-audit
 description: This skill should be used when verifying documentation claims against codebase reality. Triggers on "audit docs", "verify documentation", "check docs", "docs accurate", "documentation drift", "before release", "after refactor", "docs don't match". Uses two-pass extraction with pattern expansion for comprehensive detection.
 context: fork
-agent: Plan
+agent: general-purpose
 ---
 
 <!-- ABOUTME: Documentation audit skill for verifying claims against codebase -->
