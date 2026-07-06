@@ -1,6 +1,6 @@
 ---
 name: documentation-audit
-description: This skill should be used when verifying documentation claims against codebase reality. Triggers on "audit docs", "verify documentation", "check docs", "docs accurate", "documentation drift", "before release", "after refactor", "docs don't match". Uses two-pass extraction with pattern expansion for comprehensive detection.
+description: Verifies documentation claims against codebase reality using two-pass extraction and pattern expansion. Use when auditing docs before releases, after major refactors, when users report docs don't match behavior, or for periodic doc hygiene; trigger phrases include "audit docs", "verify documentation", "docs accurate", "documentation drift", "docs don't match".
 context: fork
 agent: general-purpose
 ---
@@ -63,8 +63,8 @@ Wrong service name: ai-radio-break-gen.service
 **Common patterns to always check:**
 - Dead scripts: `scripts/*.py` references
 - Timer intervals: `every \d+ (seconds?|minutes?)`
-- Service names: `ai-radio-*.service`, `*.timer`
-- Config vars: `RADIO_*` environment variables
+- Service names: systemd service names (e.g. `myapp-*.service`, `*.timer`)
+- Config vars: project-prefixed env vars (e.g. `MYAPP_*`)
 - CLI flags: `--flag` patterns in bash blocks
 
 ## Output Format
@@ -87,7 +87,7 @@ Generated: YYYY-MM-DD | Commit: abc123
 ### CONFIGURATION.md
 | Line | Claim | Reality | Fix |
 |------|-------|---------|-----|
-| 135 | `claude-sonnet-4-5` | Actual: `claude-3-5-sonnet-latest` | Update |
+| 135 | `example-model-v2` | Actual: `<model-name>` | Update |
 
 ## Pattern Summary
 | Pattern | Count | Root Cause |

@@ -143,15 +143,15 @@ Verify: Each against actual timer configuration
 
 ### Renamed Service Pattern
 ```
-Found: ai-radio-break-gen.service (renamed to generate-break.service)
-Search: grep -rn "ai-radio-[a-z-]*\.\(service\|timer\)" docs/
+Found: myapp-worker.service (renamed to worker.service)
+Search: grep -rn "myapp-[a-z-]*\.\(service\|timer\)" docs/
 Verify: Each against systemd/ directory
 ```
 
 ### Deprecated Config Pattern
 ```
-Found: RADIO_OLD_VAR (removed)
-Search: grep -rn "RADIO_[A-Z_]*" docs/
+Found: MYAPP_OLD_VAR (removed)
+Search: grep -rn "MYAPP_[A-Z_]*" docs/
 Verify: Each against .env.example and code
 ```
 
