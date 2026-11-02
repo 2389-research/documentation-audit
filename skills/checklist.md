@@ -61,11 +61,11 @@ grep -rn "scripts/.*\.py" docs/ | grep -v "batch_ingest\|enqueue\|schedule"
 # Wrong intervals pattern
 grep -rn "every [0-9]* \(second\|minute\)" docs/
 
-# Service/timer names
-grep -rn "ai-radio-.*\.\(service\|timer\)" docs/
+# Service/timer names (replace myapp with your project's service name prefix)
+grep -rn "myapp-.*\.\(service\|timer\)" docs/
 
-# Environment variables
-grep -rn "RADIO_[A-Z_]*" docs/
+# Environment variables (replace MYAPP with your project's env var prefix)
+grep -rn "MYAPP_[A-Z_]*" docs/
 ```
 
 ## Phase 5: Pass 2B - Gap Detection
